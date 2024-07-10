@@ -1,7 +1,7 @@
 # ESP32-BT-TempControl
 
 This project implements a Bluetooth-based temperature monitoring and relay control system using an ESP32 microcontroller. It consists of two main components: a master device and a slave device.
-![Alt text](senario.jpg)
+![Alt text](Scenario.jpg)
 ## Features
 
 - Bluetooth communication between ESP32 devices
