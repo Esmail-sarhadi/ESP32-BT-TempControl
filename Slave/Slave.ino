@@ -27,8 +27,8 @@ const long interval = 10000;                        //Interval at which to publi
 //24:0A:C4:31:6D:92
 uint8_t address[6]  = {0x24, 0x0A, 0xC4, 0x31, 0x6D, 0x92};
 
-String name = "ESP32Slave";
-//char *pin = "1234";                               //Standard pin would be provided by default.
+String name = "ESP32Slave1";
+//char *pin = "12343212122";                               //Standard pin would be provided by default.
 bool connected;
 //*********************************************************************************
 void setup() {
