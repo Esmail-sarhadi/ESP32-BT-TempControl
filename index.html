@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google-site-verification" content="vqq11CWNVkLVnZvjCeZReKc8-FRmgxek2SOWjr35CbY" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ESP32-BT-TempControl | ESP32-based Bluetooth temperature monitoring and relay control system. This project uses Bluetooth communication to send temperature and humidity data from a DHT11 sensor and allows remote control of a relay.</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="ESP32-BT-TempControl" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="ESP32-based Bluetooth temperature monitoring and relay control system. This project uses Bluetooth communication to send temperature and humidity data from a DHT11 sensor and allows remote control of a relay." />
+<meta property="og:description" content="ESP32-based Bluetooth temperature monitoring and relay control system. This project uses Bluetooth communication to send temperature and humidity data from a DHT11 sensor and allows remote control of a relay." />
+<link rel="canonical" href="https://esmail-sarhadi.github.io/ESP32-BT-TempControl/" />
+<meta property="og:url" content="https://esmail-sarhadi.github.io/ESP32-BT-TempControl/" />
+<meta property="og:site_name" content="ESP32-BT-TempControl" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ESP32-BT-TempControl" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"ESP32-based Bluetooth temperature monitoring and relay control system. This project uses Bluetooth communication to send temperature and humidity data from a DHT11 sensor and allows remote control of a relay.","headline":"ESP32-BT-TempControl","name":"ESP32-BT-TempControl","url":"https://esmail-sarhadi.github.io/ESP32-BT-TempControl/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/ESP32-BT-TempControl/assets/css/style.css?v=6c35a7225cfd06ea88f755b31aa0047218242034">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/ESP32-BT-TempControl/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+
+      <h1 id="esp32-bt-tempcontrol">ESP32-BT-TempControl</h1>
+
+<p>This project implements a Bluetooth-based temperature monitoring and relay control system using an ESP32 microcontroller. It consists of two main components: a master device and a slave device.
+<img src="/ESP32-BT-TempControl/Scenario.jpg" alt="Alt text" /></p>
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Bluetooth communication between ESP32 devices</li>
+  <li>Temperature and humidity monitoring using DHT11 sensor</li>
+  <li>Remote relay control</li>
+  <li>Periodic sensor data transmission</li>
+</ul>
+
+<h2 id="hardware-requirements">Hardware Requirements</h2>
+
+<ul>
+  <li>2x ESP32 development boards</li>
+  <li>DHT11 temperature and humidity sensor</li>
+  <li>Relay module</li>
+  <li>Appropriate power supply</li>
+</ul>
+
+<h2 id="software-dependencies">Software Dependencies</h2>
+
+<ul>
+  <li>Arduino IDE</li>
+  <li>ESP32 board support for Arduino</li>
+  <li>BluetoothSerial library</li>
+  <li>DHT sensor library</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li>Install the Arduino IDE and ESP32 board support.</li>
+  <li>Install the required libraries:
+    <ul>
+      <li>BluetoothSerial (comes with ESP32 board support)</li>
+      <li>DHT sensor library</li>
+    </ul>
+  </li>
+  <li>Clone this repository or download the source code.</li>
+  <li>Open the <code class="language-plaintext highlighter-rouge">.ino</code> files in Arduino IDE.</li>
+</ol>
+
+<h2 id="configuration">Configuration</h2>
+
+<h3 id="master-device">Master Device</h3>
+
+<ul>
+  <li>Set the Bluetooth device name in <code class="language-plaintext highlighter-rouge">SerialBT.begin("ESP32Master")</code>.</li>
+  <li>Optionally, set a PIN code by uncommenting and modifying the <code class="language-plaintext highlighter-rouge">pin</code> variable.</li>
+</ul>
+
+<h3 id="slave-device">Slave Device</h3>
+
+<ul>
+  <li>Set the Bluetooth device name in <code class="language-plaintext highlighter-rouge">SerialBT.begin("ESP32Slave", true)</code>.</li>
+  <li>Configure the MAC address of the master device in the <code class="language-plaintext highlighter-rouge">address</code> array.</li>
+  <li>Set the DHT sensor pin in <code class="language-plaintext highlighter-rouge">#define DHTPIN 4</code>.</li>
+  <li>Set the relay control pin in <code class="language-plaintext highlighter-rouge">int pinRelay = 5</code>.</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<ol>
+  <li>Upload the master code to one ESP32 and the slave code to another.</li>
+  <li>Power on both devices.</li>
+  <li>The master device will automatically try to connect to the slave.</li>
+  <li>Once connected, the slave will start sending temperature and humidity data every 10 seconds.</li>
+  <li>Send “Relay_on” or “Relay_off” from the master device to control the relay on the slave device.</li>
+</ol>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>Contributions to improve the project are welcome. Please feel free to submit a Pull Request.</p>
+
+<h2 id="license">License</h2>
+
+<p>This project is open-source and available under the <a href="/ESP32-BT-TempControl/LICENSE">MIT License</a>.</p>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/Esmail-sarhadi/ESP32-BT-TempControl/edit/main/README.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
